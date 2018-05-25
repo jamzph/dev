@@ -1,0 +1,7 @@
+{% assign wholesale = false %}
+{% if customer %}
+	{% assign customer_tags = customer.tags | handle %}
+	{% if customer.metafields.c_f.wholesale_customer == 'yes' %}
+		{% assign wholesale = true %}
+	{% endif %}
+{% endif %}

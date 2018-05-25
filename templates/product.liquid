@@ -1,4 +1,9 @@
-{% include 'wholesale-check' %}
+{% assign wholesale = false %}
+{% if customer %}
+	{% if customer.metafields.c_f.wholesale_customer == 'yes' %}
+		{% assign wholesale = true %}
+	{% endif %}
+{% endif %}
 
 
 {% assign selectedVariant = product.selected_or_first_available_variant %}
